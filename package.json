@@ -25,6 +25,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "bundlesize": "^0.18.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -44,7 +45,9 @@
     "format:fix": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "yarn test:bundlesize",
+    "deploy": "netlify deploy --prod",
+    "test:bundlesize": "bundlesize",
     "deploy": "netlify deploy --prod",
     "lint": "eslint . --ext js --ext jsx"
   },
